@@ -1,0 +1,28 @@
+version: "3.8"
+
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./uploads:/app/uploads
+    environment:
+      - PYTHONPATH=/app
+    restart: unless-stopped
+
+  # Uncomment when adding Celery workers
+  # worker:
+  #   build: .
+  #   command: celery -A src.tasks worker --loglevel=info
+  #   volumes:
+  #     - ./uploads:/app/uploads
+  #   environment:
+  #     - PYTHONPATH=/app
+  #   depends_on:
+  #     - redis
+  #   restart: unless-stopped
+
+  # redis:
+  #   image: redis:7-alpine
+  #   restart: unless-stopped
