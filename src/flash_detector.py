@@ -63,7 +63,8 @@ class FlashDetector:
         flash_mask = red_mask1 != red_mask2
         area_percent = (np.sum(flash_mask) / flash_mask.size) * 100
         
-        return np.any(flash_mask), area_percent
+        return bool(np.any(flash_mask)), area_percent
+
     
     def analyze(self, video_path: str) -> Dict[str, Any]:
         """
