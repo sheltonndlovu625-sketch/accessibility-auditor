@@ -11,7 +11,6 @@ pydantic-settings==2.2.0
 opencv-python-headless==4.10.0.84
 numpy==1.26.4
 ffmpeg-python==0.2.0
-openai-whisper==20231117
 webvtt-py==0.5.0
 pytest==8.2.0
 pytest-asyncio==0.23.0
